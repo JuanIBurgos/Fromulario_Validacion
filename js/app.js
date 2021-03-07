@@ -50,3 +50,18 @@ function contarCaracteres(input) {
     let cantidad = document.getElementById('caracteres');
     cantidad.innerHTML = `${input.value.length} caracteres`;
 }
+
+//Validamos el cheknox de novedades
+let checkTerminos = document.getElementById('checkNovedades');
+//uso un manejador de eventos y funciones anónimas
+checkTerminos.addEventListener('change', function() {
+    validarTerminos(checkTerminos);
+})
+
+function validarTerminos(checkTerminos) {
+    if (checkTerminos.checked) {
+        checkTerminos.className = "form-check-input is-valid";
+    } else {
+        checkTerminos.className = "form-check-input is-invalid";
+    }
+}
