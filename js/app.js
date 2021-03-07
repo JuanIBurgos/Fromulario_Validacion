@@ -44,3 +44,9 @@ function validarConsulta(input) {
         input.className = "form-control is-invalid";
     }
 }
+
+//Funcion para contar los caracteres y mostarlos en la label
+function contarCaracteres(input) {
+    let cantidad = document.getElementById('caracteres');
+    cantidad.innerHTML = `${input.value.length} caracteres`;
+}
