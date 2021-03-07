@@ -13,11 +13,22 @@ function campoRequerido(input) {
 //Declaro una expresión regular (valida caracteres+@+caracteres+.+almenos2caracteres)
 let expresion = /\w+@\w+\.[a-z]{2,}$/;
 //Implemento la función validarMail
-function validarMail(email) {
+function validarMail(mail) {
     //console.log("Holis desde validarMail")
-    if (email.value.trim() != "" && expresion.test(email.value)) {
-        email.className = "form-control is-valid";
+    if (mail.value.trim() != "" && expresion.test(email.value)) {
+        mail.className = "form-control is-valid";
     } else {
-        email.className = "form-control is-invalid";
+        mail.className = "form-control is-invalid";
     }
+}
+
+//Función que valida el teléfono
+function validarTelefono(input) {
+    console.log("Holis desde validarTelefono.");
+    if (input.value.trim() != "" && !isNaN(input.value)) {
+        input.className = "form-control is-valid";
+    } else {
+        input.className = "form-control is-invalid";
+    }
+
 }
