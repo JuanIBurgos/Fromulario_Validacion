@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Etiquetas Metas agregadas -->
+    <meta name="author" content="Juan Ignacio Burgos">
+    <meta name="keywords" content="JS, Java Script, validaciones en JS, validaciones en JavaScript, Formularios">
+    <meta name="description" content="En este page encontrarás el desarrollo de las validadciones de un formulario realizadas en JavaScript, con su posterior envio de datos a un mail registrado en la EmailJS">
+    <!-- Titulo de la pestaña -->
+    <title>Validación JS</title>
+    <!-- Link de bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- Link de fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <!-- Link de la carpeta de style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- ejecicio es un ejercicio de repaso de lo aprendido en clase sobre la validadción de JS-->
+
+<body>
+    <header>
+        <!-- Image and text -->
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <span class="navbar-brand"><i class="fab fa-js-square"></i> Validación JS</span>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <!--Usaremos una card para poder colocar el fomulario dentro de ella-->
+        <div class="card my-3">
+            <div class="card-header bg-dark text-light">
+                <h5 class="card-title">Formulario de contacto</h5>
+            </div>
+            <div class="card-body">
+                <!-- En el cardBody coloco el formulario -->
+                <form>
+                    <!-- NOMBRE Y APELLIDO -->
+                    <div class="mb-3">
+                        <label class="from-label">Nombre y Apellido:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Juan Perez">
+                        <!-- Coloco las validaciones negativas y positivas -->
+                        <div class="valid-feedback">
+                            Ok.
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar un nombre y apellido.
+                        </div>
+                    </div>
+                    <!-- EMAIL -->
+                    <div class="mb-3">
+                        <label class="from-label">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="juanperez@gmail.com">
+                        <!-- Coloco las validaciones negativas y positivas -->
+                        <div class="valid-feedback">
+                            Ok.
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar un email valido.
+                        </div>
+                    </div>
+                    <!-- TELÉFONO -->
+                    <div class="mb-3">
+                        <label class="from-label">Teléfono:</label>
+                        <input type="number" class="form-control" id="telefono" placeholder="3815135130">
+                        <!-- Coloco las validaciones negativas y positivas -->
+                        <div class="valid-feedback">
+                            Ok.
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar un teléfono valido.
+                        </div>
+                    </div>
+                    <!-- CONSULTA -->
+                    <div class="mb-3">
+                        <label class="from-label">Consulta:</label>
+                        <textarea class="form-control" id="consulta" rows=4 placeholder="Ingrese su consulta aqui..."></textarea>
+                        <!-- Coloco un parrafo que me avisra cuantos caracteres escribi -->
+                        <span class="text-secondary" id="caracteres">0 caracteres</span>
+                        <!-- Coloco las validaciones negativas y positivas -->
+                        <div class="valid-feedback">
+                            Ok.
+                        </div>
+                        <div class="invalid-feedback">
+                            Debe ingresar un email valido.
+                        </div>
+                    </div>
+                    <!-- CHECKBOX  -->
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="checkNovedades">
+                            <label class="form-check-label">Desea recibir novedades del sitio.</label>
+                            <!-- Coloco las validaciones negativas y positivas -->
+                            <div class="valid-feedback">
+                                Ok.
+                            </div>
+                            <div class="invalid-feedback">
+                                Debe ingresar un email valido.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BOTON ENVIAR  -->
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <!-- ALERT QUE ME AVISARA QUE FUE ENVIADO CORRECTAMENTE O NO -->
+                    <div class="alert alert-primary mt-3 d-none" role="alert" id="alerta">
+                        A simple primary alert—check it out!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark py-3 text-light text-center">
+        &copy; Todos los derechos se encuentran reservados a RollingCode
+    </footer>
+
+
+    <!-- Script de Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <!-- Script de app.js -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
