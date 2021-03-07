@@ -9,3 +9,15 @@ function campoRequerido(input) {
         input.className = "form-control is-valid";
     }
 }
+
+//Declaro una expresión regular (valida caracteres+@+caracteres+.+almenos2caracteres)
+let expresion = /\w+@\w+\.[a-z]{2,}$/;
+//Implemento la función validarMail
+function validarMail(email) {
+    //console.log("Holis desde validarMail")
+    if (email.value.trim() != "" && expresion.test(email.value)) {
+        email.className = "form-control is-valid";
+    } else {
+        email.className = "form-control is-invalid";
+    }
+}
