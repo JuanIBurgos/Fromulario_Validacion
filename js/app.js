@@ -32,3 +32,15 @@ function validarTelefono(input) {
     }
 
 }
+
+//Función que valida el campo consulta
+function validarConsulta(input) {
+    //console.log("Holis desde validarConsulta");
+    //console.log(input.value.length);
+    if (input.value.trim() != "" && input.value.length >= 10) {
+        input.className = "form-control is-valid";
+
+    } else {
+        input.className = "form-control is-invalid";
+    }
+}

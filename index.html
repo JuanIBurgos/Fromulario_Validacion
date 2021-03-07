@@ -77,7 +77,7 @@
                     <!-- CONSULTA -->
                     <div class="mb-3">
                         <label class="from-label">Consulta:</label>
-                        <textarea class="form-control" id="consulta" rows=4 placeholder="Ingrese su consulta aqui..."></textarea>
+                        <textarea class="form-control" id="consulta" rows=4 placeholder="Ingrese su consulta aqui..." onblur="validarConsulta(this)"></textarea>
                         <!-- Coloco un parrafo que me avisra cuantos caracteres escribi -->
                         <span class="text-secondary" id="caracteres">0 caracteres</span>
                         <!-- Coloco las validaciones negativas y positivas -->
@@ -85,7 +85,7 @@
                             Ok.
                         </div>
                         <div class="invalid-feedback">
-                            Debe ingresar un email valido.
+                            Debe ingresar una consulta con al menos 10 caracteres.
                         </div>
                     </div>
                     <!-- CHECKBOX  -->
