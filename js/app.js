@@ -78,6 +78,8 @@ function validarTerminos(checkTerminos) {
 
 //Validiamos todo el formulario - a traves del botón enviar
 function validarGeneral(event) {
+    let alert = document.querySelector('#alerta');
+    alert.className = "alert alert-primary mt-3 d-none";
     console.log("Holis desde validarGeneral");
     event.preventDefault();
     if (campoRequerido(document.querySelector('#nombre')) &&
@@ -87,7 +89,45 @@ function validarGeneral(event) {
         validarTerminos(checkTerminos)) {
         console.log("Holis Verdadero");
 
+        enviarEmail();
     } else {
         console.log("Holis falso");
+        //alert.className = "alert alert-danger mt-3 text-center";
+        //alert.innerHTML = `Debe corregir los datos cargados`;
     }
+}
+
+//Funcion que me permite enviar los datos por mail y me retorna un si lo pudo enviar
+function enviarEmail() {
+    let suscripcion = document.querySelector('#FormularioSuscripcion');
+    let alert = document.querySelector('#alerta');
+    emailjs.send("service_ut1nsoy", "template_cfp9dn9", {
+        to_name: "Sr. Administrador:",
+        from_name: document.querySelector('#nombre').value,
+        message: `Email: ${document.querySelector('#email').value} -
+                Teléfono: ${document.querySelector('#telefono').value} -
+                Consulta: ${document.querySelector('#consulta').value} .-
+                `
+    }).then(function(reponse) {
+            console.log("Pudo enviar el mail.")
+            alert.className = "alert alert-primary mt-3 text-center";
+            alert.innerHTML = `${document.querySelector('#nombre').value} su consulta ha sido enviada con exito`;
+            suscripcion.reset();
+            limpiarValidaciones();
+        },
+        function(error) {
+            console.log("No puedo enviar el mail.")
+            alert.className = "alert alert-danger mt-3";
+            alert.innerHTML = `${document.querySelector('#nombre').value} ha ocurrido un fallo al enviar su consulta por favor intentar de nuevo`;
+        })
+}
+
+//Función para limpiar las validaciones y el contador de caracteres
+function limpiarValidaciones() {
+    document.querySelector('#nombre').className = "form-control";
+    document.querySelector('#caracteres').innerHTML = '0 caracteres';
+    document.querySelector('#email').className = "form-control";
+    document.querySelector('#consulta').className = "form-control"
+    document.querySelector('#telefono').className = "form-control"
+    checkTerminos.className = "form-check-input";
 }
