@@ -3,7 +3,7 @@ function campoRequerido(input) {
     //console.log("Holis desde compo requrido");
     //Con el this enviamos la etiqueta como parametro y le colocamos el nombre de input
     //Preguntamos si  es un campo vacio
-    if (input.value === "") {
+    if (input.value.trim() === "") {
         input.className = "form-control is-invalid";
     } else {
         input.className = "form-control is-valid";
